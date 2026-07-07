@@ -1,0 +1,51 @@
+timestamp,tenure,monthly_charges,total_charges,contract,internet,gender,prediction,prob_detractor,prob_passive,prob_promoter,confidence
+2026-06-27 09:57:00,40,29.6,1147.24,Two year,No,Female,Promoter,6.7,45.1,48.2,48.2
+2026-06-27 14:19:00,53,100.3,5498.03,Two year,Fiber optic,Female,Passive,14.1,56.9,29.0,56.9
+2026-06-27 19:01:00,3,74.6,229.59,Month-to-month,Fiber optic,Male,Detractor,94.6,5.2,0.2,94.6
+2026-06-27 23:33:00,22,21.4,459.94,Month-to-month,No,Male,Detractor,86.6,12.8,0.6,86.6
+2026-06-28 04:09:00,14,82.3,1136.29,Month-to-month,Fiber optic,Female,Detractor,94.6,5.2,0.2,94.6
+2026-06-28 08:55:00,9,76.5,697.46,Month-to-month,Fiber optic,Female,Detractor,94.6,5.2,0.2,94.6
+2026-06-28 13:20:00,57,91.1,5266.29,Two year,Fiber optic,Female,Passive,8.3,49.0,42.8,49.0
+2026-06-28 18:21:00,13,67.6,898.53,Month-to-month,Fiber optic,Female,Detractor,89.4,10.1,0.5,89.4
+2026-06-28 23:21:00,24,101.6,2450.06,Month-to-month,Fiber optic,Male,Detractor,90.6,9.0,0.4,90.6
+2026-06-29 03:30:00,43,53.8,2302.34,One year,DSL,Female,Passive,18.4,58.8,22.8,58.8
+2026-06-29 08:39:00,39,64.0,2453.48,Two year,DSL,Male,Promoter,4.3,36.4,59.4,59.4
+2026-06-29 12:43:00,62,94.4,5696.56,Two year,Fiber optic,Male,Promoter,2.3,25.3,72.5,72.5
+2026-06-29 18:05:00,40,58.1,2261.3,One year,DSL,Male,Passive,34.5,54.8,10.7,54.8
+2026-06-29 22:12:00,7,64.4,435.78,Month-to-month,Fiber optic,Male,Detractor,89.5,10.1,0.5,89.5
+2026-06-30 03:30:00,42,73.6,3159.74,Two year,DSL,Male,Promoter,2.1,24.1,73.8,73.8
+2026-06-30 07:48:00,2,29.0,56.7,Month-to-month,No,Female,Detractor,94.6,5.2,0.2,94.6
+2026-06-30 12:49:00,1,80.6,80.15,Month-to-month,Fiber optic,Male,Detractor,94.6,5.2,0.2,94.6
+2026-06-30 17:13:00,19,91.1,1729.69,One year,Fiber optic,Male,Detractor,69.3,28.5,2.2,69.3
+2026-06-30 21:56:00,1,46.9,47.19,Month-to-month,DSL,Male,Detractor,94.6,5.2,0.2,94.6
+2026-07-01 02:46:00,1,92.4,89.31,Month-to-month,Fiber optic,Male,Detractor,94.6,5.2,0.2,94.6
+2026-07-01 07:30:00,41,91.7,3710.98,Two year,Fiber optic,Female,Promoter,6.3,43.9,49.9,49.9
+2026-07-01 11:48:00,20,23.0,462.96,Month-to-month,No,Male,Detractor,76.0,22.5,1.5,76.0
+2026-07-01 17:18:00,13,89.8,1131.07,Month-to-month,Fiber optic,Female,Detractor,83.0,16.1,0.9,83.0
+2026-07-01 21:24:00,4,76.5,313.55,Month-to-month,Fiber optic,Female,Detractor,94.6,5.2,0.2,94.6
+2026-07-02 01:50:00,9,50.1,439.17,Month-to-month,DSL,Female,Detractor,74.8,23.6,1.6,74.8
+2026-07-02 07:00:00,56,90.2,5212.49,Two year,Fiber optic,Male,Passive,14.1,56.9,29.1,56.9
+2026-07-02 11:27:00,48,94.0,4601.21,Two year,Fiber optic,Male,Promoter,2.3,25.4,72.4,72.4
+2026-07-02 16:29:00,25,22.9,558.37,Month-to-month,No,Male,Detractor,57.9,38.2,3.9,57.9
+2026-07-02 20:36:00,16,24.0,372.58,Month-to-month,No,Female,Detractor,94.6,5.2,0.2,94.6
+2026-07-03 01:52:00,16,57.4,932.92,Month-to-month,DSL,Female,Detractor,73.4,24.8,1.8,73.4
+2026-07-03 06:54:00,65,88.4,5574.87,Two year,Fiber optic,Female,Promoter,1.7,20.7,77.7,77.7
+2026-07-03 11:36:00,20,106.7,2098.01,Month-to-month,Fiber optic,Female,Detractor,89.3,10.2,0.5,89.3
+2026-07-03 16:21:00,36,59.1,2113.33,One year,DSL,Male,Detractor,64.5,32.6,2.9,64.5
+2026-07-03 20:12:00,50,79.7,3832.73,Two year,Fiber optic,Female,Promoter,3.4,32.0,64.7,64.7
+2026-07-04 01:23:00,26,73.1,1957.22,Two year,Fiber optic,Female,Passive,13.9,56.7,29.4,56.7
+2026-07-04 05:44:00,21,63.4,1326.32,Month-to-month,Fiber optic,Female,Detractor,73.7,24.6,1.7,73.7
+2026-07-04 10:20:00,59,43.9,2612.12,One year,DSL,Male,Passive,32.9,55.7,11.4,55.7
+2026-07-04 15:03:00,8,26.6,209.2,Month-to-month,No,Female,Detractor,73.2,25.0,1.8,73.2
+2026-07-04 20:16:00,8,51.3,413.68,Month-to-month,DSL,Female,Detractor,92.5,7.2,0.3,92.5
+2026-07-05 00:28:00,11,19.7,208.47,Month-to-month,No,Male,Detractor,94.6,5.2,0.2,94.6
+2026-07-05 05:30:00,25,77.3,1913.39,Month-to-month,Fiber optic,Female,Detractor,72.5,25.7,1.9,72.5
+2026-07-05 10:35:00,57,18.0,1054.2,Two year,No,Female,Promoter,0.6,10.0,89.4,89.4
+2026-07-05 14:55:00,57,83.9,4643.02,Two year,Fiber optic,Female,Promoter,5.2,40.3,54.5,54.5
+2026-07-05 19:14:00,20,90.5,1775.62,Two year,Fiber optic,Male,Promoter,7.0,46.0,47.0,47.0
+2026-07-06 00:10:00,26,100.1,2566.52,Month-to-month,Fiber optic,Male,Detractor,72.4,25.7,1.9,72.4
+2026-07-06 05:01:00,22,34.4,746.28,Month-to-month,No,Male,Detractor,94.6,5.2,0.2,94.6
+2026-07-06 09:55:00,45,88.9,3934.1,One year,Fiber optic,Male,Passive,14.1,56.9,29.1,56.9
+2026-07-06 13:58:00,31,98.5,3109.02,One year,Fiber optic,Female,Passive,19.3,59.0,21.7,59.0
+2026-07-06 19:22:00,1,33.1,33.82,Month-to-month,No,Female,Detractor,85.3,14.0,0.7,85.3
+2026-07-06 23:51:00,1,61.7,62.06,Month-to-month,DSL,Male,Detractor,63.6,33.4,3.0,63.6
