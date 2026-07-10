@@ -69,10 +69,7 @@ else:
     TEXT     = "#1a1a2e"
     SUBTEXT  = "#666688"
     ACCENT   = "#5c35d1"
-    # Solid white (not transparent) so charts keep proper contrast in
-    # fullscreen mode, where Plotly renders on a white canvas. A transparent
-    # background there can make axis text and labels hard to read.
-    PLOT_BG  = "rgba(0,0,0,0)"
+    PLOT_BG  = "rgba(255,255,255,0)"
     FC       = "#1a1a2e"
     PIE_LINE = "#f4f6fb"
 
@@ -266,23 +263,15 @@ def layout(fig, title, height=300):
         plot_bgcolor=PLOT_BG,
         font=dict(color=FC, size=11),
         legend=dict(font=dict(color=FC, size=11), title=""),
-        # Explicit linecolor + tick color so axes stay crisp in fullscreen,
-        # where Plotly otherwise falls back to faint defaults.
-        xaxis=dict(color=FC, showgrid=False, linecolor=FC,
+        xaxis=dict(color=FC, showgrid=False,
                    tickfont=dict(color=FC),
                    title_font=dict(color=FC)),
-        yaxis=dict(color=FC, showgrid=False, linecolor=FC,
+        yaxis=dict(color=FC, showgrid=False,
                    tickfont=dict(color=FC),
                    title_font=dict(color=FC)),
         height=height,
         margin=dict(t=40, b=10, l=10, r=10),
     )
-    # Final safeguard: force every axis title/tick and the global font to FC,
-    # so plotly-express auto-generated labels (from column names) can't fall
-    # back to a faint default that disappears in light mode or fullscreen.
-    fig.update_xaxes(title_font=dict(color=FC), tickfont=dict(color=FC), color=FC)
-    fig.update_yaxes(title_font=dict(color=FC), tickfont=dict(color=FC), color=FC)
-    fig.update_layout(font=dict(color=FC))
     return fig
 
 # ============================================================
@@ -334,7 +323,7 @@ with c3:
     fig_l = px.line(tmp, x="run", y="confidence", color="prediction",
                     color_discrete_map=COLORS, markers=True)
     layout(fig_l, "Model Confidence per Run")
-    fig_l.update_yaxes(ticksuffix="%", title_font=dict(color=FC), tickfont=dict(color=FC), color=FC)
+    fig_l.update_yaxes(ticksuffix="%")
     st.plotly_chart(fig_l, use_container_width=True)
 
 # ============================================================
@@ -354,8 +343,8 @@ with d1:
                         color_discrete_map=COLORS,
                         hover_data=["contract","internet","confidence"])
     layout(fig_sc, "Tenure vs Monthly Charges (bubble size = confidence)", height=350)
-    fig_sc.update_xaxes(title="Tenure (months)", title_font=dict(color=FC), tickfont=dict(color=FC), color=FC)
-    fig_sc.update_yaxes(title="Monthly Charges ($)", title_font=dict(color=FC), tickfont=dict(color=FC), color=FC)
+    fig_sc.update_xaxes(title="Tenure (months)")
+    fig_sc.update_yaxes(title="Monthly Charges ($)")
     st.plotly_chart(fig_sc, use_container_width=True)
 
 with d2:
@@ -365,7 +354,7 @@ with d2:
                          nbins=20, color_discrete_map=COLORS,
                          barmode="overlay", opacity=0.75)
     layout(fig_h, "Confidence Distribution (%)", height=350)
-    fig_h.update_xaxes(title="Confidence (%)", title_font=dict(color=FC), tickfont=dict(color=FC), color=FC)
+    fig_h.update_xaxes(title="Confidence (%)")
     st.plotly_chart(fig_h, use_container_width=True)
 
 # ============================================================
@@ -415,12 +404,11 @@ with e2:
         paper_bgcolor=PLOT_BG, plot_bgcolor=PLOT_BG,
         font=dict(color=FC),
         legend=dict(font=dict(color=FC)),
-        xaxis=dict(color=FC, showgrid=False, linecolor=FC, tickfont=dict(color=FC),
-                   title_font=dict(color=FC)),
-        yaxis=dict(color=FC, showgrid=False, linecolor=FC, title="Tenure (months)",
-                   tickfont=dict(color=FC), title_font=dict(color=FC)),
+        xaxis=dict(color=FC, showgrid=False, tickfont=dict(color=FC)),
+        yaxis=dict(color=FC, showgrid=False, title="Tenure (months)",
+                   tickfont=dict(color=FC)),
         yaxis2=dict(color="#60a5fa", title="Monthly ($)",
-                    tickfont=dict(color="#60a5fa"), title_font=dict(color="#60a5fa")),
+                    tickfont=dict(color="#60a5fa")),
         height=320, margin=dict(t=40,b=10,l=10,r=10),
     )
     st.plotly_chart(fig_a, use_container_width=True)
