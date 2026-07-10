@@ -1,0 +1,13 @@
+# Full dependencies to re-run nps_prediction.ipynb (includes SHAP + plotting).
+# The deployed apps use the lean requirements.txt; the notebook needs these extras.
+streamlit>=1.40.0
+pandas>=2.2.0
+numpy>=1.26,<2.1
+scikit-learn==1.8.0
+xgboost>=2.1.0
+plotly>=5.24.0
+joblib>=1.4.0
+openpyxl>=3.1.0
+shap>=0.46.0
+matplotlib>=3.9.0
+seaborn>=0.13.0
