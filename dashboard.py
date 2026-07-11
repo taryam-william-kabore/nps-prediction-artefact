@@ -323,7 +323,7 @@ with c3:
     fig_l = px.line(tmp, x="run", y="confidence", color="prediction",
                     color_discrete_map=COLORS, markers=True)
     layout(fig_l, "Model Confidence per Run")
-    fig_l.update_yaxes(ticksuffix="%")
+    fig_l.update_yaxes(ticksuffix="%", color=FC, tickfont=dict(color=FC), title_font=dict(color=FC))
     st.plotly_chart(fig_l, use_container_width=True)
 
 # ============================================================
@@ -343,8 +343,8 @@ with d1:
                         color_discrete_map=COLORS,
                         hover_data=["contract","internet","confidence"])
     layout(fig_sc, "Tenure vs Monthly Charges (bubble size = confidence)", height=350)
-    fig_sc.update_xaxes(title="Tenure (months)")
-    fig_sc.update_yaxes(title="Monthly Charges ($)")
+    fig_sc.update_xaxes(title="Tenure (months)", color=FC, tickfont=dict(color=FC), title_font=dict(color=FC))
+    fig_sc.update_yaxes(title="Monthly Charges ($)", color=FC, tickfont=dict(color=FC), title_font=dict(color=FC))
     st.plotly_chart(fig_sc, use_container_width=True)
 
 with d2:
@@ -354,7 +354,7 @@ with d2:
                          nbins=20, color_discrete_map=COLORS,
                          barmode="overlay", opacity=0.75)
     layout(fig_h, "Confidence Distribution (%)", height=350)
-    fig_h.update_xaxes(title="Confidence (%)")
+    fig_h.update_xaxes(title="Confidence (%)", color=FC, tickfont=dict(color=FC), title_font=dict(color=FC))
     st.plotly_chart(fig_h, use_container_width=True)
 
 # ============================================================
