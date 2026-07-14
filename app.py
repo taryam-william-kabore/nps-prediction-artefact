@@ -70,7 +70,19 @@ st.markdown(f"""
     section[data-testid="stSidebar"] {{
         background: {SIDEBAR};
         border-right: 1px solid {CARD_BR};
+        min-width: 300px !important;
+        max-width: 300px !important;
+        transform: none !important;
+        visibility: visible !important;
+        margin-left: 0px !important;
     }}
+    section[data-testid="stSidebar"][aria-expanded="false"] {{
+        transform: none !important;
+        visibility: visible !important;
+        margin-left: 0px !important;
+    }}
+    /* keep the header/collapse control usable so the sidebar toggle works */
+    header[data-testid="stHeader"] {{ background: transparent; }}
     .card {{
         background: {CARD_BG};
         border: 1px solid {CARD_BR};
