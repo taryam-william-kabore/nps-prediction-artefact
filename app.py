@@ -105,7 +105,10 @@ st.markdown(f"""
     .stButton > button:hover {{ opacity: 0.88; }}
     .stSlider label, .stSelectbox label, [data-testid="stWidgetLabel"] {{ color: {TEXT} !important; }}
     .stSlider label p, .stSelectbox label p {{ color: {TEXT} !important; }}
-    #MainMenu {{visibility: hidden;}} footer {{visibility: hidden;}} header {{visibility: hidden;}}
+    #MainMenu {{visibility: hidden;}}
+    footer {{visibility: hidden;}}
+    [data-testid="stToolbar"] {{visibility: hidden;}}
+    [data-testid="stDecoration"] {{display: none;}}
 </style>
 """, unsafe_allow_html=True)
 

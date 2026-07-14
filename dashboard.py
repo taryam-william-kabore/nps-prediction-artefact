@@ -59,7 +59,7 @@ if dark:
     TEXT     = "#ffffff"
     SUBTEXT  = "rgba(255,255,255,0.6)"
     ACCENT   = "#a78bfa"
-    PLOT_BG  = "rgba(0,0,0,0)"          # transparent so the page gradient shows through
+    PLOT_BG  = "#1a1332"               # solid dark so fullscreen keeps contrast
     FC       = "#ffffff"
     PIE_LINE = "#0f0c29"
 else:
@@ -69,7 +69,7 @@ else:
     TEXT     = "#1a1a2e"
     SUBTEXT  = "#666688"
     ACCENT   = "#5c35d1"
-    PLOT_BG  = "rgba(255,255,255,0)"
+    PLOT_BG  = "#ffffff"               # solid white so fullscreen keeps contrast
     FC       = "#1a1a2e"
     PIE_LINE = "#f4f6fb"
 
@@ -108,7 +108,7 @@ st.markdown(f"""
         color: {SUBTEXT};
         margin-bottom: 8px;
     }}
-    .stButton > button {{
+    .stButton > button, .stDownloadButton > button {{
         background: linear-gradient(135deg, #667eea, #764ba2);
         color: white !important; border: none;
         border-radius: 8px; padding: 8px 16px;
@@ -229,6 +229,23 @@ nps_score = round((n_pro - n_det) / total * 100) if total else 0
 
 # One colour per class, reused in every chart so the meaning stays consistent
 # (red = bad/detractor, orange = neutral/passive, green = good/promoter).
+# ── Global Plotly template ────────────────────────────────────────────────────
+# Force EVERY chart's text (titles, axis labels, ticks, legends) to the theme
+# font colour in one place. This is bulletproof: individual charts can't leave
+# a faint default behind, and it renders identically locally and when deployed.
+import plotly.io as pio
+pio.templates["nps_theme"] = pio.templates["plotly"]
+pio.templates["nps_theme"].layout.font.color = FC
+pio.templates["nps_theme"].layout.title.font.color = FC
+pio.templates["nps_theme"].layout.xaxis.title.font.color = FC
+pio.templates["nps_theme"].layout.yaxis.title.font.color = FC
+pio.templates["nps_theme"].layout.xaxis.tickfont.color = FC
+pio.templates["nps_theme"].layout.yaxis.tickfont.color = FC
+pio.templates["nps_theme"].layout.legend.font.color = FC
+pio.templates["nps_theme"].layout.paper_bgcolor = PLOT_BG
+pio.templates["nps_theme"].layout.plot_bgcolor = PLOT_BG
+pio.templates.default = "nps_theme"
+
 COLORS = {"Detractor": "#ff4b4b", "Passive": "#ffa500", "Promoter": "#00c853"}
 
 st.markdown('<div class="section-label">Key Metrics</div>', unsafe_allow_html=True)
@@ -343,8 +360,8 @@ with d1:
                         color_discrete_map=COLORS,
                         hover_data=["contract","internet","confidence"])
     layout(fig_sc, "Tenure vs Monthly Charges (bubble size = confidence)", height=350)
-    fig_sc.update_xaxes(title="Tenure (months)", color=FC, tickfont=dict(color=FC), title_font=dict(color=FC))
-    fig_sc.update_yaxes(title="Monthly Charges ($)", color=FC, tickfont=dict(color=FC), title_font=dict(color=FC))
+    fig_sc.update_xaxes(title=dict(text="Tenure (months)", font=dict(color=FC)), color=FC, tickfont=dict(color=FC))
+    fig_sc.update_yaxes(title=dict(text="Monthly Charges ($)", font=dict(color=FC)), color=FC, tickfont=dict(color=FC))
     st.plotly_chart(fig_sc, use_container_width=True)
 
 with d2:
@@ -354,7 +371,7 @@ with d2:
                          nbins=20, color_discrete_map=COLORS,
                          barmode="overlay", opacity=0.75)
     layout(fig_h, "Confidence Distribution (%)", height=350)
-    fig_h.update_xaxes(title="Confidence (%)", color=FC, tickfont=dict(color=FC), title_font=dict(color=FC))
+    fig_h.update_xaxes(title=dict(text="Confidence (%)", font=dict(color=FC)), color=FC, tickfont=dict(color=FC))
     st.plotly_chart(fig_h, use_container_width=True)
 
 # ============================================================
@@ -405,9 +422,11 @@ with e2:
         font=dict(color=FC),
         legend=dict(font=dict(color=FC)),
         xaxis=dict(color=FC, showgrid=False, tickfont=dict(color=FC)),
-        yaxis=dict(color=FC, showgrid=False, title="Tenure (months)",
+        yaxis=dict(color=FC, showgrid=False,
+                   title=dict(text="Tenure (months)", font=dict(color=FC)),
                    tickfont=dict(color=FC)),
-        yaxis2=dict(color="#60a5fa", title="Monthly ($)",
+        yaxis2=dict(color="#60a5fa",
+                    title=dict(text="Monthly ($)", font=dict(color="#60a5fa")),
                     tickfont=dict(color="#60a5fa")),
         height=320, margin=dict(t=40,b=10,l=10,r=10),
     )
